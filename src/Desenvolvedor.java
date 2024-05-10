@@ -1,5 +1,14 @@
 public class Desenvolvedor extends Funcionario {
     private String linguagens;
+    private String repositorio;
+
+    public String getRepositorio() {
+        return repositorio;
+    }
+
+    public void setRepositorio(String repositorio) {
+        this.repositorio = repositorio;
+    }
 
     public void setLinguagens(String linguagens) {
         this.linguagens = linguagens;
@@ -12,26 +21,30 @@ public class Desenvolvedor extends Funcionario {
     public Desenvolvedor() {
     }
 
-    public Desenvolvedor(String nome, String matricula, String linguagens) {
+    public Desenvolvedor(String nome, String matricula, String linguagens, String repositorio) {
         super(nome, matricula);
         this.linguagens = linguagens;
+        this.repositorio = repositorio;
     }
 
     @Override
     public String calcularSalario() {
-        return "";
+        System.out.println("\nDigite as horas Trabalhadas");
+        double ht = Console.lerDouble();
+        System.out.println("\nDigite o valor:");
+        double valor = Console.lerDouble();
+        double sal = ht * valor;
+        return toString() + "\nSalario: " + sal;
     }
 
     @Override
     public String trabalhar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'trabalhar'");
+        return "\nO dev " + getNome() + " chegou no trabalho.";
     }
-
+    
     @Override
     public String relatarProgresso() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'relatarProgresso'");
+        return "\nO dev " + getNome() + " realizou um novo commit no repositorio " + repositorio;
     }
 
     @Override

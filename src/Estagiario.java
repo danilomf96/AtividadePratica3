@@ -29,19 +29,23 @@ public class Estagiario extends Funcionario {
 
     @Override
     public String calcularSalario() {
-        return "";
+        System.out.println("\nDigite o valor da hora :");
+        double valor = Console.lerDouble();
+        System.out.println("\nDigite o valor do vale transporte :");
+        double vt = Console.lerDouble();
+        double salT = horasTrabalho * valor + vt;
+        double sal = horasTrabalho * valor;
+        return toString() + "\nDinheiro total: " + salT + "\nVale Transporte " + vt + "\nSalario: " + sal;
     }
 
     @Override
     public String trabalhar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'trabalhar'");
+        return "\nO estagiario " + getNome() + " chegou no trabalho";
     }
 
     @Override
     public String relatarProgresso() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'relatarProgresso'");
+        return "\nO estagiario falou com o supervisor " + supervisor + " e relatou o progresso.";
     }
 
     @Override

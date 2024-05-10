@@ -8,7 +8,7 @@ public class Cadastro {
         listaFuncionario.add(funcionario);
     }
 
-    public static List<Funcionario> getFuncionario() {
+    public static List<Funcionario> getListaFuncionario() {
         return listaFuncionario;
     }
 
